@@ -21,7 +21,7 @@ const App = () => {
 
   const handleProcess = () => {
     if (kalimat) {
-      // jadiin array
+      // jadikan array
       let formattedKalimat = kalimat.trim().split('')
       
       // aturan untuk ' dan kata kedua akhir kata
