@@ -24,18 +24,21 @@ const App = () => {
       // jadiin array
       let formattedKalimat = kalimat.trim().split('')
       
-      // aturan untuk ' dan akhir kata
+      // aturan untuk ' dan kata kedua akhir kata
       for (let i = 0; i < formattedKalimat.length; i++) {
         if (i == 0) continue
         
-        if (formattedKalimat[i] == "\'") {
+        if (formattedKalimat[i] == " ") {
+          formattedKalimat[i - 2] = formattedKalimat[i - 2].toUpperCase()
+        }
+        else if(i == formattedKalimat.length - 1){
+          formattedKalimat[i - 1] = formattedKalimat[i - 1].toUpperCase()
+        }
+        else if (formattedKalimat[i] == "\'") {
           if (i == formattedKalimat.length - 1) continue
           
           formattedKalimat[i-1] = formattedKalimat[i-1].toUpperCase()
           formattedKalimat[i+1] = formattedKalimat[i+1].toUpperCase()
-        }
-        else if (formattedKalimat[i] == " " || i == formattedKalimat.length - 1) {
-          formattedKalimat[i - 1] = formattedKalimat[i - 1].toUpperCase()
         }
       }
 
